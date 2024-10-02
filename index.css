@@ -1,0 +1,75 @@
+body {
+    background-color: black;
+    font-family: sans-serif;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    background-color: white;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    background-color: chocolate;
+    color: white;
+    border: dashed black ;
+    padding: .3rem .7rem;
+}
+
+
+/*Felxbox en elementos padre*/
+ul {
+    /* ul es de bloque, si quisiesemos que sólo ocupase el tamaño de sus hijos, pondríamos inline-flex */
+    display: flex;
+    /* Por defecto el eje principal es el horizontal y se cambiaría con el flex-direction */
+    /* flex-direction: row;  */
+    /* Para distruir los hijos dentro del espacio del padre en el eje principal */
+    /* justify-content: flex-start; */
+    /* Para que no aparezca el scroll y pase a la siguiente fila al ser mayor que el 100% del ancho */
+    /* flex-wrap: wrap; */
+    /* Hay una propuedad que auna flex-direction y flex-wrap y es flex-flow: colum wrap, por ejemplo */
+
+    /* Para manejar la colocación de los hijos en el eje secundario, en este caso el vertical se utiliza, align-items. Por defecto está "strech" y lo que hace es que los hijos ocupan todo el espacio y pierde la forma, para mantener la forma debemos utilizar las propiedades flex-*/
+
+    /* Para centrar un div sería centrar en horizontal: justify-content: center y align-items:center */
+    /* align-items: flex-end; */
+
+    /* Para administrar el espacio residual (el sobrante) utilizamos align-content */
+
+    /* align-content: stretch; */
+
+    /* para dar espacios entre elementos utilizamos gap que aglutina espacio entre filas row-gap y columnas column-gap */
+    /* gap: .3rem .7rem; */
+}
+
+li {
+    /* flex-grow permite crecer a los hijos tanto como el espacio residual que haya. en este caso, repartiría el que hay entre los hijos */
+    /* flex-shrink es una propiedad que indica a qué velocidad o en que proporción se encogeran los elementos. Es útil cuando al hacer una pantalla más pequeña prefieres que se haga más pequeña uno y mantener otras con el mismo tamaño. por defecto es 1 */
+    /* flex-basis es la propiedad que le dice a cada hijo cual es su tamaño de partida, por defecto es 0 */
+
+    /* flex te permite establecer las tres propiedades (flex-grow, flex-shrink y flex-basis)*/
+    /* flex-grow:0;
+    flex-basis: 200px;
+    flex-shrink: 0; */
+    flex: 0  1 0;
+}
+
+li:nth-child(2) {
+    /* flex-grow: 3;
+    flex-basis: 400px;
+    flex-shrink: 1; */
+    flex: 2 2 
+}
+
+li:nth-child(3) {
+    /* flex-grow: 1; 
+    flex-basis: 800px;
+    flex-shrink: 2;*/
+}
